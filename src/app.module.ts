@@ -19,6 +19,7 @@ import { ProdutoModule } from './produto/produto.module';
       database: 'db_brecho',
       entities: [Categoria, Produto],
       synchronize: true,
+      logging: true,
     }),
     CategoriaModule,
     ProdutoModule,
