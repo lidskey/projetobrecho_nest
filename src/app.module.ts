@@ -4,6 +4,9 @@ import { CategoriaModule } from './categoria/categoria.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm/dist/typeorm.module';
+import { Produto } from './produto/entities/produto.entity';
+import { ProdutoModule } from './produto/produto.module';
+
 
 @Module({
   imports: [
@@ -14,12 +17,13 @@ import { TypeOrmModule } from '@nestjs/typeorm/dist/typeorm.module';
       username: 'root',
       password: 'root',
       database: 'db_brecho',
-      entities: [Categoria],
+      entities: [Categoria, Produto],
       synchronize: true,
     }),
     CategoriaModule,
+    ProdutoModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
